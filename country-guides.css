@@ -1,3 +1,25 @@
+#page-bolivia .country-photo-hero {
+  min-height: clamp(440px, 50vw, 1080px);
+  background-position: center;
+}
+
+@media (max-width: 900px) {
+  #page-bolivia .country-photo-hero {
+    display: block;
+    min-height: 0;
+    padding-top: 0;
+    background: var(--cream);
+  }
+
+  #page-bolivia .country-photo-hero::before {
+    content: "";
+    display: block;
+    aspect-ratio: 16 / 9;
+    margin-bottom: clamp(1.75rem, 6vw, 3.25rem);
+    background: var(--country-photo) center / contain no-repeat;
+  }
+}
+
 :is(.guide-panel, .external-sources, .external-source-country, .guide-source-list > li) {
   scroll-margin-top: 7.5rem;
 }
