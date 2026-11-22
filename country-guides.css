@@ -20,7 +20,8 @@
   }
 }
 
-:is(.guide-panel, .external-sources, .external-source-country, .guide-source-list > li) {
+:is(.guide-panel, .external-sources, .external-source-country, .guide-source-list > li, .works-cited > li),
+#works-cited {
   scroll-margin-top: 7.5rem;
 }
 
@@ -99,7 +100,12 @@
   overflow-wrap: anywhere;
 }
 
-.guide-source-list li:target {
+.works-cited li::marker {
+  color: var(--forest);
+  font-weight: 700;
+}
+
+:is(.guide-source-list, .works-cited) li:target {
   background: #f3ebdc;
   outline: 2px solid var(--accent);
   outline-offset: .2rem;
@@ -136,7 +142,8 @@
 }
 
 @media (max-width: 900px) {
-  :is(.guide-panel, .external-sources, .external-source-country, .guide-source-list > li) {
+  :is(.guide-panel, .external-sources, .external-source-country, .guide-source-list > li, .works-cited > li),
+  #works-cited {
     scroll-margin-top: 10rem;
   }
 }
@@ -146,4 +153,5 @@
   .guide-summary { padding: 1.05rem; }
   .guide-places { grid-template-columns: minmax(0, 1fr); }
   .guide-references { white-space: normal; }
+  .works-cited li { padding-inline-start: 1.25rem; text-indent: -1.25rem; }
 }
